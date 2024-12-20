@@ -1,22 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { LayoutDefault } from "@/layouts/Default";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Todo List",
-  description: "A minimal todo list application.",
+export const metadata = {
+  title: "TODO Sample（React Hook Form）",
+  description: "",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja">
+      <body>
+        <LayoutDefault>{children}</LayoutDefault>
+      </body>
     </html>
   );
 }

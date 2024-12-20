@@ -1,9 +1,17 @@
-# Day 3: Todo List
+# Project Setup Guide
 
-**Description:** A minimal todo list application.
+To run the project, follow these steps:
 
-**Functionalities:**
+1. **Open two terminals**:
 
-- Add, edit, and delete tasks
-- Mark tasks as complete
-- Persistent storage using local storage
+   - In the first terminal, run the following command to start the mock API:
+     ```bash
+     npm run mock:start
+     ```
+   - In the second terminal, run the following command to start the development server:
+     ```bash
+     npm run dev
+     ```
+
+2. **About the Mock API**:
+   - The todo items are stored in the `mock` folder, which serves as a mock API folder for simulating backend interactions.
