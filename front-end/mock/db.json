@@ -7,7 +7,7 @@
     },
     {
       "todoItem": "Task 2",
-      "isTodoFinish": true,
+      "isTodoFinish": false,
       "id": 2
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "todoItem": "test change 1",
-      "isTodoFinish": false,
+      "isTodoFinish": true,
       "id": 4
     }
   ]
