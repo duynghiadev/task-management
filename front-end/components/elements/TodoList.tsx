@@ -11,7 +11,7 @@ const TodoItemSchema = zod.object({
   isTodoFinish: zod.boolean(),
 });
 
-const apiURL = "http://localhost:3000/todo/";
+const apiURL = "https://restful-api-vercel-lac.vercel.app/todo";
 
 type TodoItem = zod.infer<typeof TodoItemSchema> & { id?: number };
 
