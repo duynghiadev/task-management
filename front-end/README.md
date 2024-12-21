@@ -5,8 +5,9 @@ To run the project, follow these steps:
 1. **Open two terminals**:
 
    - In the first terminal, run the following command to start the mock API:
+   - In folder `database`, run:
      ```bash
-     npm run mock:start
+     npm start
      ```
    - In the second terminal, run the following command to start the development server:
      ```bash
