@@ -11,7 +11,7 @@ const TodoItemSchema = zod.object({
   isTodoFinish: zod.boolean(),
 });
 
-const apiURL = "http://localhost:3001/todo/";
+const apiURL = "http://localhost:3000/todo/";
 
 type TodoItem = zod.infer<typeof TodoItemSchema> & { id?: number };
 
