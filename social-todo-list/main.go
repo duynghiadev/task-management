@@ -9,6 +9,7 @@ import (
 	"social-todo-list/middleware"
 	ginitem "social-todo-list/modules/item/transport/gin"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
@@ -26,6 +27,15 @@ func main() {
 	}
 
 	r := gin.Default()
+
+	// Configure CORS
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3000", "http://localhost:3000"}, // Allowed origins
+		AllowMethods:     []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},      // Allowed HTTP methods
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},        // Allowed headers
+		ExposeHeaders:    []string{"Content-Length"},                                 // Headers exposed to the client
+		AllowCredentials: true,                                                       // Allow cookies and credentials
+	}))
 
 	r.Use(middleware.Recovery())
 
