@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock:start": "json-server --watch mock/db.json -p 3000"
+    "mock:start": "json-server --watch mock/db.json -p 3001"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
