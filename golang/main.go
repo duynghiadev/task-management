@@ -2,10 +2,14 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -22,8 +26,25 @@ type Task struct {
 var db *gorm.DB
 
 func main() {
-	// Kết nối MySQL
-	dsn := "root:duynghia123@tcp(127.0.0.1:3306)/task_management?charset=utf8mb4&parseTime=True&loc=Local"
+	// connect MySQL
+	// Load environment variables from the .env file
+	err1 := godotenv.Load()
+	if err1 != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	// Get the environment variables
+	dbUser := os.Getenv("DB_USER")
+	dbPassword := os.Getenv("DB_PASSWORD")
+	dbHost := os.Getenv("DB_HOST")
+	dbPort := os.Getenv("DB_PORT")
+	dbName := os.Getenv("DB_NAME")
+	dbCharset := os.Getenv("DB_CHARSET")
+	dbLoc := os.Getenv("DB_LOC")
+
+	// Build the connection string
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=True&loc=%s",
+		dbUser, dbPassword, dbHost, dbPort, dbName, dbCharset, dbLoc)
 	var err error
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
