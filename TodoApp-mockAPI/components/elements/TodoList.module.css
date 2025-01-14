@@ -1,0 +1,135 @@
+/* Tạo kiểu cho bảng */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  table-layout: auto; /* Đảm bảo chiều rộng của các cột tự động điều chỉnh */
+}
+
+.th,
+.td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  min-width: 150px; /* Đảm bảo chiều rộng tối thiểu cho các cột */
+}
+
+.th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Cải thiện giao diện các button */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.buttonDelete,
+.buttonChange {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonDelete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.buttonDelete:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.buttonChange {
+  background-color: #007bff;
+  color: white;
+}
+
+.buttonChange:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.addButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.addButton:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Checkbox */
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Cải thiện giao diện của các dòng edit */
+.editRow {
+  background-color: #f8f9fa;
+}
+
+.editRow td {
+  padding: 10px 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+/* Nút Submit và Cancel */
+.cancelButton,
+.saveButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancelButton {
+  background-color: #6c757d;
+}
+
+.cancelButton:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+.saveButton {
+  background-color: #007bff;
+}
+
+.saveButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
