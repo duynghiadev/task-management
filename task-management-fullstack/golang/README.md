@@ -30,6 +30,15 @@ golang/
 └── go.mod
 ```
 
+This restructured version follows standard Go project layout conventions and implements a clean architecture pattern. Here's what each component does:
+
+1. `cmd/api/main.go`: Entry point of the application that initializes and wires everything together
+2. `internal/config/database.go`: Database configuration and initialization
+3. `internal/model/task.go`: Data model definitions
+4. `internal/repository/task.go`: Database operations layer
+5. `internal/handler/task.go`: HTTP handlers for the API endpoints
+6. `pkg/middleware/cors.go`: Middleware functions that can be reused across projects
+
 ## Environment Setup
 
 To set up the project, follow these steps:
