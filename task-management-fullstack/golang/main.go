@@ -94,10 +94,19 @@ func getTask(c *gin.Context) {
 	id := c.Param("id")
 	var task Task
 
+	// type short
 	if err := db.First(&task, id).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Task not found"})
 		return
 	}
+
+	// type long
+	// var err error
+	// err = db.First(&task, id).Error
+	// if err != nil {
+	// 	c.JSON(http.StatusNotFound, gin.H{"error": "Task not found"})
+	// 	return
+	// }
 
 	c.JSON(http.StatusOK, task)
 }
