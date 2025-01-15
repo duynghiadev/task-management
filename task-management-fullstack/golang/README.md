@@ -39,7 +39,123 @@ This restructured version follows standard Go project layout conventions and imp
 5. `internal/handler/task.go`: HTTP handlers for the API endpoints
 6. `pkg/middleware/cors.go`: Middleware functions that can be reused across projects
 
-## Environment Setup
+# Project Structure Documentation
+
+## Dependencies Flow
+
+### 1. `main.go`
+
+- Initializes database using `config`
+- Sets up routes using `handler`
+- Applies `middleware`
+
+### 2. `handler/task.go`
+
+- Uses `model` for data structures
+- Uses `repository` for database operations
+- Handles HTTP requests/responses
+
+### 3. `repository/task.go`
+
+- Uses `model` for data structures
+- Performs CRUD operations on database
+
+### 4. `model/task.go`
+
+- Defines data structures
+- Contains validation rules
+
+### 5. `config/database.go`
+
+- Handles database connection
+- Performs auto-migration
+
+### 6. `middleware/cors.go`
+
+- Handles CORS configuration
+- Independent middleware function
+
+## Key Components Responsibilities
+
+### 1. Entry Point (`cmd/api/main.go`)
+
+```
+- Load environment variables
+- Initialize database
+- Setup router and middleware
+- Define routes
+- Start server
+```
+
+### 2. Models (`internal/model/task.go`)
+
+```
+- Define data structures
+- Define validation rules
+- Define JSON serialization
+```
+
+### 3. Handlers (`internal/handler/task.go`)
+
+```
+- Handle HTTP requests
+- Validate input
+- Call repository methods
+- Return HTTP responses
+```
+
+### 4. Repository (`internal/repository/task.go`)
+
+```
+- Handle database operations
+- Implement CRUD methods
+- Return domain objects
+```
+
+### 5. Configuration (`internal/config/database.go`)
+
+```
+- Read database configuration
+- Initialize database connection
+- Setup database migrations
+```
+
+### 6. Middleware (`pkg/middleware/cors.go`)
+
+```
+- Handle CORS configuration
+- Process HTTP requests/responses
+```
+
+## Design Principles
+
+The project follows these key design principles:
+
+- Separation of Concerns
+- Dependency Injection
+- Clean Architecture
+- Single Responsibility
+- Interface Segregation
+
+## Common Operations Flow
+
+1. HTTP request comes in through a route
+2. Middleware processes the request
+3. Handler receives the request
+4. Handler calls repository methods
+5. Repository performs database operations
+6. Data flows back through the same layers
+7. Response is sent to the client
+
+## Benefits
+
+This structure makes the code:
+
+- Easier to test (each component can be tested independently)
+- Easier to maintain (clear separation of concerns)
+- More scalable (easy to add new features)
+
+# Environment Setup
 
 To set up the project, follow these steps:
 
@@ -83,7 +199,7 @@ To set up the project, follow these steps:
 
    The API will be accessible at `http://localhost:8080`.
 
-## API Endpoints
+# API Endpoints
 
 ### 1. **GET /tasks**
 
