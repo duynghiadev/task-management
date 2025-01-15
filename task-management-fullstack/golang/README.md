@@ -9,13 +9,25 @@ This is a task management API built using Go (Golang), Gin framework, and MySQL.
 ## Project Structure
 
 ```
-task-management-api/
+golang/
 │
-├── .env                   # Environment variables for database connection
-├── main.go                # Main Go application entry point
-├── go.mod                 # Go modules dependencies
-├── go.sum                 # Go modules checksums
-└── README.md              # Project documentation
+├── cmd
+│   └── api
+│       └── main.go
+| 	└── .env
+├── internal
+│   ├── config
+│   │   └── database.go
+│   ├── handler
+│   │   └── task.go
+│   ├── model
+│   │   └── task.go
+│   └── repository
+│       └── task.go
+├── pkg
+│   └── middleware
+│       └── cors.go
+└── go.mod
 ```
 
 ## Environment Setup
@@ -25,8 +37,9 @@ To set up the project, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/duynghiadev/task-management-api.git
-   cd task-management-api
+   git clone https://github.com/duynghiadev/task-management.git
+   cd task-management-fullstack
+   cd golang
    ```
 
 2. **Install Go dependencies**:
